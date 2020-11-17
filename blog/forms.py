@@ -1,5 +1,5 @@
 from django import forms
-from blog.models import Post, comment
+from blog.models import Post, Comment
 
 #putting models into forms:
 
@@ -20,6 +20,6 @@ class CommentForm(forms.ModelForm):
         fields = ('author', 'text')
         widgets = {
             'author':forms.TextInput(attrs = {'class': 'textinputclass'}),
-            #pretty same but without 'postcontent' class for purpose 
+            #pretty same but without 'postcontent' class for purpose
             'text':forms.Textarea(attrs = {'class': 'editable medium-editor-textarea'})
         }
