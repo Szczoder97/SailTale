@@ -19,7 +19,7 @@ class Post(models.Model):
 
     #where to go after publishing post
     def get_absolute_url(self):
-        return reverse('post_detail', kwargs = {'pk':self.pk})
+        return reverse('blog/post_detail', kwargs = {'pk':self.pk})
 
     #showing approved comments
     def approve_comments(self):
@@ -44,7 +44,7 @@ class Comment(models.Model):
         slef.save()
 
     def get_absolute_url(self):
-        return reverse('post_list')
+        return reverse('blog/post_list')
 
     def __str__(self):
         return self.text
